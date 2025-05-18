@@ -1,12 +1,7 @@
-index.js
-
 const express = require("express");
-const serverless = require("serverless-http");
-
 const app = express();
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
-app.get("/api/hello", (req, res) => {
-  res.json({ message: "Hello from Express on Vercel!" });
-});
+app.listen(3001, () => console.log("Server ready on port 3001."));
 
-module.exports.handler = serverless(app);
+module.exports = app;
